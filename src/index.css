@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #0A0A0B;
+  --color-background: #050505;
   --color-foreground: #FFFFFF;
-  --color-primary: #4F46E5;
-  --color-secondary: #06B6D4;
-  --color-accent: #818CF8;
-  --color-muted: #1F2937;
-  --color-border: rgba(255, 255, 255, 0.1);
+  --color-primary: #FBBF24; /* Amber-400 for Filament feel */
+  --color-secondary: #D97706; /* Amber-600 */
+  --color-accent: #71717A; /* Zinc-400 */
+  --color-muted: #18181B; /* Zinc-900 */
+  --color-border: #27272A; /* Zinc-800 */
   
   --font-sans: "Inter", system-ui, sans-serif;
 }
@@ -22,33 +22,71 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+    background-image: radial-gradient(circle, #27272A 1px, transparent 1px);
+    background-size: 24px 24px;
   }
 
-  /* Glassmorphism utility */
+  /* Glassmorphism utility - less blurry, more bordered for Filament style */
   .glass {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    background: #0A0A0B;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.5);
   }
 
   .glass-hover:hover {
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: #111111;
+    border-color: var(--color-accent);
+  }
+
+  /* Corner Accents (Signature Filament L-Shape) */
+  .corner-accent::before,
+  .corner-accent::after,
+  .corner-accent-bottom::before,
+  .corner-accent-bottom::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-color: var(--color-border);
+    border-style: solid;
+    z-index: 10;
+  }
+
+  .corner-accent::before {
+    top: -1px;
+    left: -1px;
+    border-width: 1px 0 0 1px;
+  }
+
+  .corner-accent::after {
+    top: -1px;
+    right: -1px;
+    border-width: 1px 1px 0 0;
+  }
+
+  .corner-accent-bottom::before {
+    bottom: -1px;
+    left: -1px;
+    border-width: 0 0 1px 1px;
+  }
+
+  .corner-accent-bottom::after {
+    bottom: -1px;
+    right: -1px;
+    border-width: 0 1px 1px 0;
   }
 
   /* Gradient Text */
   .text-gradient {
-    background: linear-gradient(to right, #4F46E5, #06B6D4);
+    background: linear-gradient(to right, #FBBF24, #D97706);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
-  /* Animations for scroll reveal */
   .reveal {
     opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    transform: translateY(10px);
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
   .reveal.active {
@@ -59,18 +97,18 @@
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0A0A0B;
+  background: var(--color-background);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1F2937;
-  border-radius: 4px;
+  background: #27272A;
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #374151;
+  background: #3F3F46;
 }

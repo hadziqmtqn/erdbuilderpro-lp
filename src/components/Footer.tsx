@@ -23,41 +23,63 @@ const LinkedinIcon = ({ className }: { className?: string }) => (
 
 export const Footer = () => {
   return (
-    <footer className="py-20 border-t border-white/5 bg-black/40">
+    <footer className="py-20 border-t border-[#18181B] bg-[#0A0A0B]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-10">
-          <div className="flex flex-col items-center md:items-start gap-4">
-            <div className="flex items-center gap-2">
-              <Database className="w-6 h-6 text-primary" />
-              <span className="text-xl font-bold tracking-tight">ERD Builder <span className="text-secondary">Pro</span></span>
+        <div className="flex flex-col lg:flex-row justify-between items-start gap-16 mb-20">
+          <div className="max-w-xs">
+            <div className="flex items-center gap-2 mb-6">
+              <div className="p-1 rounded bg-[#111111] border border-[#27272A]">
+                <Database className="w-5 h-5 text-primary" />
+              </div>
+              <span className="text-sm font-bold tracking-tight uppercase text-white">ERD Builder <span className="text-primary">Pro</span></span>
             </div>
-            <p className="text-gray-400 text-center md:text-left max-w-xs">
-              The professional visual workspace for modern database architects.
+            <p className="text-[#71717A] text-xs font-medium leading-relaxed mb-8">
+              A cohesive set of well-considered building blocks for high-performance database architects and modern engineering teams.
             </p>
+            <div className="flex items-center gap-4">
+              <a href="#" className="p-2 bg-[#111111] border border-[#27272A] rounded-md text-[#71717A] hover:border-primary/40 hover:text-primary transition-all"><XIcon className="w-4 h-4" /></a>
+              <a href="#" className="p-2 bg-[#111111] border border-[#27272A] rounded-md text-[#71717A] hover:border-primary/40 hover:text-primary transition-all"><GithubIcon className="w-4 h-4" /></a>
+              <a href="#" className="p-2 bg-[#111111] border border-[#27272A] rounded-md text-[#71717A] hover:border-primary/40 hover:text-primary transition-all"><LinkedinIcon className="w-4 h-4" /></a>
+            </div>
           </div>
           
-          <div className="flex items-center gap-8">
-            <a href="#" className="text-gray-400 hover:text-white transition-colors"><XIcon className="w-5 h-5" /></a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors"><GithubIcon className="w-5 h-5" /></a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors"><LinkedinIcon className="w-5 h-5" /></a>
-          </div>
-
-          <div className="flex flex-col items-center md:items-end gap-2">
-            <button className="px-6 py-2 rounded-full bg-primary hover:bg-primary/90 font-bold transition-all shadow-lg shadow-primary/20">
-              Get Started Now
-            </button>
-            <span className="text-sm text-gray-500 mt-4 flex items-center gap-1">
-              Built for Architects & Developers <Heart className="w-4 h-4 text-red-500 fill-current" />
-            </span>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-12 lg:gap-24">
+            <div className="flex flex-col gap-6">
+              <span className="text-[10px] uppercase font-black tracking-widest text-[#71717A]">Product</span>
+              <div className="flex flex-col gap-4">
+                <a href="#" className="text-xs font-bold text-[#71717A] hover:text-white transition-colors">Workspace</a>
+                <a href="#" className="text-xs font-bold text-[#71717A] hover:text-white transition-colors">Plugins</a>
+                <a href="#" className="text-xs font-bold text-[#71717A] hover:text-white transition-colors">Insights</a>
+              </div>
+            </div>
+            <div className="flex flex-col gap-6">
+              <span className="text-[10px] uppercase font-black tracking-widest text-[#71717A]">Engineering</span>
+              <div className="flex flex-col gap-4">
+                <a href="#" className="text-xs font-bold text-[#71717A] hover:text-white transition-colors">Vite Plugin</a>
+                <a href="#" className="text-xs font-bold text-[#71717A] hover:text-white transition-colors">Supabase Core</a>
+                <a href="#" className="text-xs font-bold text-[#71717A] hover:text-white transition-colors">R2 Storage</a>
+              </div>
+            </div>
+            <div className="flex flex-col gap-6">
+              <span className="text-[10px] uppercase font-black tracking-widest text-[#71717A]">Resources</span>
+              <div className="flex flex-col gap-4">
+                <a href="#" className="text-xs font-bold text-[#71717A] hover:text-white transition-colors">Documentation</a>
+                <a href="#" className="text-xs font-bold text-[#71717A] hover:text-white transition-colors">Changelog</a>
+                <a href="#" className="text-xs font-bold text-[#71717A] hover:text-white transition-colors">Consulting</a>
+              </div>
+            </div>
           </div>
         </div>
         
-        <div className="mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 gap-4">
-          <p>© 2026 ERD Builder Pro. All rights reserved.</p>
-          <div className="flex gap-8">
-            <a href="#" className="hover:text-gray-400">Terms of Service</a>
-            <a href="#" className="hover:text-gray-400">Privacy Policy</a>
-            <a href="#" className="hover:text-gray-400">Cookie Settings</a>
+        <div className="pt-10 border-t border-[#18181B] flex flex-col md:flex-row justify-between items-center gap-8">
+          <div className="flex items-center gap-2">
+            <span className="text-[10px] font-bold text-[#71717A] uppercase tracking-tighter">© 2026 ERD Builder Pro.</span>
+            <div className="h-3 w-px bg-[#18181B] hidden md:block" />
+            <span className="text-[10px] font-bold text-primary uppercase tracking-tighter flex items-center gap-1">Built with mathematical precision <Heart className="w-3 h-3 text-primary fill-current" /></span>
+          </div>
+          <div className="flex gap-8 text-[10px] font-bold text-[#71717A] uppercase tracking-tighter">
+            <a href="#" className="hover:text-white">Privacy Policy</a>
+            <a href="#" className="hover:text-white">Terms of Use</a>
           </div>
         </div>
       </div>
